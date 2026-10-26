@@ -34,6 +34,7 @@
   }
 
   *, *::before, *::after { box-sizing: border-box; }
+  [hidden] { display: none !important; }   /* скрытое не показывают даже блоки с display: grid */
   html, body { margin: 0; height: 100%; }
   body {
     background: var(--bg);
