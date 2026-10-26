@@ -6,9 +6,10 @@
 <title>Кавказ. Неделя — от нарзана до звёзд</title>
 <meta name="description" content="Неделя на Кавказе: источники Минеральных Вод, ночь в обсерватории Роскосмоса и дорога к подножию Эльбруса.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Manrope:wght@400;500&display=swap" rel="stylesheet">
+<!-- Шрифты и скрипты лежат на самом сайте: страница не ждёт сторонние сервисы и одинаково быстро открывается с VPN и без -->
+<link rel="preload" href="fonts/cormorant-garamond-cyrillic-44d82a.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="fonts/manrope-cyrillic-c9a5f1.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="fonts/fonts.css">
 
 <script>
   // Прячем элементы до анимации только если движение разрешено
@@ -699,13 +700,13 @@
   <div class="hero__media" id="media">
     <!-- Положи фото в папку kavkaz/photo/ — оно подхватится само -->
     <picture>
-      <source media="(max-width: 760px)" srcset="photo/hero-mobile.jpg">
-      <img src="photo/hero.jpg" alt="" onload="this.closest('.hero__media').classList.add('has-photo')" onerror="this.closest('picture').remove()">
+      <source media="(max-width: 760px)" srcset="photo/hero-mobile.webp">
+      <img src="photo/hero.webp" alt="" fetchpriority="high" onload="this.closest('.hero__media').classList.add('has-photo')" onerror="this.closest('picture').remove()">
     </picture>
     <div class="placeholder" data-fade>
       <b>Здесь нужно фото</b>
       Крупный план зелени: аллеи Кисловодского парка или&nbsp;трава плато Бермамыт в&nbsp;тумане, кадр почти без&nbsp;неба.
-      Горизонтальное от&nbsp;2400&nbsp;px → <code>photo/hero.jpg</code>, вертикальное для&nbsp;телефона от&nbsp;1200×2000&nbsp;px → <code>photo/hero-mobile.jpg</code>.
+      Горизонтальное от&nbsp;2400&nbsp;px → <code>photo/hero.webp</code>, вертикальное для&nbsp;телефона от&nbsp;1200×2000&nbsp;px → <code>photo/hero-mobile.webp</code>.
     </div>
   </div>
 
@@ -750,7 +751,7 @@
     </div>
     <figure class="part__media" data-reveal>
       <div class="frame">
-        <img src="photo/waters.jpg" alt="Питьевая галерея минеральных источников в Ессентуках" loading="lazy">
+        <img src="photo/waters.webp" alt="Питьевая галерея минеральных источников в Ессентуках" loading="lazy">
       </div>
       <figcaption>Питьевая галерея, Ессентуки. Фото: <a href="https://commons.wikimedia.org/wiki/File:Essentuki,_Mineral_water_drinking_gallery,_Russia.jpg">Vyacheslav Argenberg</a>, <a href="https://creativecommons.org/licenses/by/4.0/deed.ru">CC&nbsp;BY&nbsp;4.0</a></figcaption>
     </figure>
@@ -764,7 +765,7 @@
     </div>
     <figure class="part__media" data-reveal>
       <div class="frame">
-        <img src="photo/all/2.jpg" alt="Двое на краю скалы плато Бермамыт" loading="lazy" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+        <img src="photo/all/2.webp" alt="Двое на краю скалы плато Бермамыт" loading="lazy" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
       </div>
       <figcaption>Плато Бермамыт, Карачаево-Черкесия</figcaption>
     </figure>
@@ -780,7 +781,7 @@
   <div class="program__grid stay__cards">
     <article class="card" data-reveal>
       <div class="frame">
-        <img src="photo/essentuki.jpg" alt="Колоннада грязелечебницы имени Семашко в Ессентуках" loading="lazy" style="object-position: 72% 50%">
+        <img src="photo/essentuki.webp" alt="Колоннада грязелечебницы имени Семашко в Ессентуках" loading="lazy" style="object-position: 72% 50%">
       </div>
       <div class="card__head">
         <h3 class="card__name">Ессентуки</h3>
@@ -792,7 +793,7 @@
 
     <article class="card" data-reveal>
       <div class="frame">
-        <img src="photo/all/12.jpg" alt="Домики обсерватории под Млечным Путём" loading="lazy" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
+        <img src="photo/all/12.webp" alt="Домики обсерватории под Млечным Путём" loading="lazy" onload="this.parentNode.classList.add('has-photo')" onerror="this.remove()">
       </div>
       <div class="card__head">
         <h3 class="card__name">Обсерватория</h3>
@@ -853,7 +854,7 @@
 <section class="program__grid host" id="host" aria-labelledby="host-name">
   <figure class="host__media" data-reveal>
     <div class="frame">
-      <img src="photo/all/3.jpg" alt="Ольга на плато, за спиной Эльбрус" loading="lazy">
+      <img src="photo/all/3.webp" alt="Ольга на плато, за спиной Эльбрус" loading="lazy">
     </div>
   </figure>
   <div class="host__text" data-reveal>
@@ -869,7 +870,7 @@
 </section>
 
 <section class="night" id="observatory" aria-labelledby="night-title">
-  <img class="night__bg" src="photo/night-2k.jpg" srcset="photo/night-2k.jpg 1792w, photo/night-4k.jpg 3584w" sizes="100vw" alt="" loading="lazy">
+  <img class="night__bg" src="photo/night-2k.webp" srcset="photo/night-2k.webp 1792w, photo/night-4k.webp 3584w" sizes="100vw" alt="" loading="lazy">
   <div class="program__grid night__content">
     <h2 class="night__title" id="night-title" data-reveal><span>Ночь</span><span>в&nbsp;обсерватории</span></h2>
     <p class="lead" data-reveal>Ради этой ночи мы и&nbsp;поднимаемся так высоко. Здесь нет городской засветки, поэтому небо видно таким, каким его почти не&nbsp;видят в&nbsp;городе.</p>
@@ -946,8 +947,8 @@
   </ul>
 </section>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="js/gsap.min.js"></script>
+<script src="js/ScrollTrigger.min.js"></script>
 <script>
   // Переключатель цитат: работает и без GSAP, с ним — мягкая смена
   (function () {

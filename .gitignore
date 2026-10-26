@@ -1,6 +1,5 @@
 .DS_Store
-# неиспользуемые исходники: на сайте нужны только 2, 3 и 12
+# исходники в JPEG остаются на компьютере, на сайте только сжатые WebP
+photo/src/
 photo/all/*
-!photo/all/2.jpg
-!photo/all/3.jpg
-!photo/all/12.jpg
+!photo/all/*.webp
